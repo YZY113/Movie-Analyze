@@ -1,0 +1,26 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "pattern": {
+        "<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>((?:<(?:ACTION_verb|VerbP)>(?:為了|決定|決心||誓言)</(?:ACTION_verb|VerbP)>)(?:<ENTITY_pronoun>[^<]+</ENTITY_pronoun>)?(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)": {
+            "id": "7b19e650-417d-48b5-91d8-035871dd01bd",
+            "utterance": "鋼鐵人為了他的家人"
+        },
+        "<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>((?:<(?:ACTION_verb|VerbP)>(?:為了|決定|決心|挺身|誓言|試圖|想|想要|發誓)</(?:ACTION_verb|VerbP)>)<(?:ACTION_verb|VerbP)>(?:守護|捍衛|保衛|拯救|保護|帶領|阻止)</(?:ACTION_verb|VerbP)>(?:<ENTITY_DetPhrase>[^<]+</ENTITY_DetPhrase>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)": {
+            "id": "4fd14335-01bc-43f8-a846-c36c75cea0f8",
+            "utterance": "鋼鐵人為了守護這個世界"
+        },
+        "<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>((?:<(?:ACTION_verb|VerbP)>(?:決定|決心|挺身而出|誓言|試圖|想|想要|發誓)</(?:ACTION_verb|VerbP)>)<(?:ACTION_verb|VerbP)>(?:為了|守護|捍衛|保衛|拯救|保護|帶領|阻止)</(?:ACTION_verb|VerbP)>(?:<ENTITY_DetPhrase>[^<]+</ENTITY_DetPhrase>)<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)": {
+            "id": "c781c2bc-7096-4334-8bdf-894a78dba02d",
+            "utterance": "鋼鐵人發誓為了這個世界"
+        },
+        "<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>((?:<(?:ACTION_verb|VerbP)>(?:為了|決定|決心|挺身|誓言|試圖|想|想要|發誓)</(?:ACTION_verb|VerbP)>)<(?:ACTION_verb|VerbP)>(?:守護|捍衛|保衛|拯救|保護|帶領|阻止)</(?:ACTION_verb|VerbP)>(?:<ENTITY_pronoun>[^<你妳]+</ENTITY_pronoun>)?(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)": {
+            "id": "c90ba215-147d-4c93-8a7c-93660bc7e9a0",
+            "utterance": "鋼鐵人為了守護他的家人"
+        },
+        "<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>((?:<(?:ACTION_verb|VerbP)>(?:決定|決心|挺身而出|誓言|試圖|想|想要|發誓)</(?:ACTION_verb|VerbP)>)<(?:ACTION_verb|VerbP)>(?:為了|守護|捍衛|保衛|拯救|保護|帶領|阻止)</(?:ACTION_verb|VerbP)>(?:<ENTITY_pronoun>[^<你妳]+</ENTITY_pronoun>)?(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)": {
+            "id": "1cb72ac2-4066-42dc-a2ed-33790e711896",
+            "utterance": "鋼鐵人發誓為了他的家人"
+        }
+    }
+}

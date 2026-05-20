@@ -1,0 +1,22 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "pattern": {
+        "(<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))><(?:ACTION_verb|VerbP)>(?:陷入|深陷|爆發)</(?:ACTION_verb|VerbP)>(?:<(?:MODIFIER|ModifierP)>[^<]+</(?:MODIFIER|ModifierP)>)?)": {
+            "id": "a7fff1ef-e602-4214-80a4-a1ceceaf5211",
+            "utterance": "地球陷入恐慌"
+        },
+        "(?:<(?:MODIFIER|ModifierP)>[^<]+</(?:MODIFIER|ModifierP)>)?(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(<(?:ACTION_verb|VerbP)>(?:奪取|毀滅|威脅|襲擊|奪得|出現|入侵|掠奪|控制)</(?:ACTION_verb|VerbP)>)": {
+            "id": "879a0f01-0fe9-427a-9cd6-a67d092de19a",
+            "utterance": "邪惡的薩諾斯奪取"
+        },
+        "(?:<(?:MODIFIER|ModifierP)>[^<]+</(?:MODIFIER|ModifierP)>)?(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(<(?:ACTION_verb|VerbP)>企圖</(?:ACTION_verb|VerbP)><(?:ACTION_verb|VerbP)>(?:奪取|毀滅|威脅|襲擊|奪得|入侵|掠奪|控制)</(?:ACTION_verb|VerbP)>)": {
+            "id": "7677ea51-a550-4f3f-8101-dc71e6a49038",
+            "utterance": "邪惡的薩諾斯企圖奪取"
+        },
+        "(?:<(?:MODIFIER|ModifierP)>[^<]+</(?:MODIFIER|ModifierP)>)?(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>((?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))><(?:ACTION_verb|VerbP)>(?:構成|造成)</(?:ACTION_verb|VerbP)><(?:ACTION_verb|VerbP)>(?:威脅|傷害|危害|壓迫|損害)</(?:ACTION_verb|VerbP)>)": {
+            "id": "2647501d-85a2-42c5-898c-065b983f02b5",
+            "utterance": "邪惡的薩諾斯對地球構成威脅"
+        }
+    }
+}

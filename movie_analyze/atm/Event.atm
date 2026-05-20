@@ -1,0 +1,22 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "pattern": {
+        "(<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:神秘|黑暗|失敗|毀滅性|異常|殘忍|陌生|不明)</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:ACTION_verb|VerbP)>[^<]+</(?:ACTION_verb|VerbP)>)": {
+            "id": "cec91e04-823c-4831-900d-905a6dab8742",
+            "utterance": "毀滅性的戰鬥"
+        },
+        "(<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:神秘|黑暗|失敗|毀滅性|異常|殘忍|陌生|不明)</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)": {
+            "id": "11350d71-8bea-4a23-be3c-409a38a099d4",
+            "utterance": "毀滅性的變故"
+        },
+        "(?<!</FUNC_negation>)<(?:ACTION_verb|VerbP)>當</(?:ACTION_verb|VerbP)>(<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:神秘|黑暗|失敗|毀滅性|異常|殘忍|陌生|不明)</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)<(?:ACTION_verb|VerbP)>(?:發生|爆發|)</(?:ACTION_verb|VerbP)><RANGE_(?:period)>後</RANGE_(?:period)>": {
+            "id": "e733e36d-5654-4328-aad1-f8d1c9ccf3d3",
+            "utterance": "當毀滅性的變故發生後"
+        },
+        "(?:<(?:MODIFIER|ModifierP)>突然</(?:MODIFIER|ModifierP)>)?(?:<ENTITY_classifier>[^<]+</ENTITY_classifier>)?(<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:神秘|黑暗|失敗|毀滅性|異常|殘忍|陌生|不明)</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>(?:<FUNC_in(?:ner|ter)>[^<]+</FUNC_in(?:ner|ter)>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>)(?:<MODAL>[^<]+</MODAL>)?<(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))>[^<]+</(?:UserDefined|ENTITY_(?:nounHead|nouny?|oov))><(?:ACTION_verb|VerbP)>(被迫|捲入|陷入|遭到)</(?:ACTION_verb|VerbP)>": {
+            "id": "8442e556-3b6f-481a-b405-6d64629868b8",
+            "utterance": "突然一場毀滅性的變故將鋼鐵人捲入"
+        }
+    }
+}
