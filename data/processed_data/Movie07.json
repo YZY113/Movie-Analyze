@@ -1,0 +1,29 @@
+{
+  "蜘蛛人:無家日": {
+    "character": {
+      "utterance": [
+        "彼得帕克的蜘蛛人身分曝光"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "彼得帕克必須面對"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "他向奇異博士史傳奇尋求幫助"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "被控殺害了神秘法師"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "生活被超級英雄的身分大受影響"
+      ]
+    }
+  }
+}

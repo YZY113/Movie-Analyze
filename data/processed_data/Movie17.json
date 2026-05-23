@@ -1,0 +1,29 @@
+{
+  "復仇者聯盟": {
+    "character": {
+      "utterance": [
+        "邪惡的洛基"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "擊退這個對地球造成史無前例威脅的敵人"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "對地球造成史無前例威脅"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "一項超級英雄招募計畫"
+      ]
+    }
+  }
+}

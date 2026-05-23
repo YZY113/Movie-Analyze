@@ -1,0 +1,29 @@
+{
+  "蜘蛛人：離家日": {
+    "character": {
+      "utterance": [
+        "邪惡的洛基"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "決定暫時卸下"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "卻遇上尼克福瑞與神祕怪物和神秘客"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "在經歷一連串的激烈事件後"
+      ]
+    }
+  }
+}

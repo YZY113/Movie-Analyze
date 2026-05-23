@@ -1,0 +1,29 @@
+{
+  "金鋼狼：武士": {
+    "character": {
+      "utterance": [
+        "休傑克曼回到"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "面對他的終極剋星"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "致命的武士刀"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "在一場充滿動作的生死戰鬥中"
+      ]
+    }
+  }
+}

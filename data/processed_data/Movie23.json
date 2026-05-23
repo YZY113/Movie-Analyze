@@ -1,0 +1,29 @@
+{
+  "蜘蛛人（2002）": {
+    "character": {
+      "utterance": [
+        "年輕的彼德發誓"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "打擊犯罪"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "發誓要用他的超能力"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "危險的陰謀"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "某次被一隻具有放射線的蜘蛛咬到後"
+      ]
+    }
+  }
+}

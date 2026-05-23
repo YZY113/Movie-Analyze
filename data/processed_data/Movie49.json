@@ -1,0 +1,29 @@
+{
+  "美國隊長：復仇者先鋒": {
+    "character": {
+      "utterance": [
+        "史提芬羅傑斯是一個瘦弱卻充滿愛國心的年輕人"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "史提芬想入軍隊"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "軍方的一個秘密實驗"
+      ]
+    }
+  }
+}

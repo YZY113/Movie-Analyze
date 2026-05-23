@@ -1,0 +1,29 @@
+{
+  "鋼鐵人3": {
+    "character": {
+      "utterance": [
+        "鋼鐵人即將面臨的宿敵"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "他必須依靠才智"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "生活被敵人摧毀得支離破碎"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "這場峰迴路轉的旅程"
+      ]
+    }
+  }
+}

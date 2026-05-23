@@ -1,0 +1,29 @@
+{
+  "美國隊長": {
+    "character": {
+      "utterance": [
+        "體型瘦小的史提芬羅傑斯"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "對抗邪惡的納粹組織「九頭蛇」"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "九頭蛇的威脅"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "經過一項神奇的科學實驗"
+      ]
+    }
+  }
+}

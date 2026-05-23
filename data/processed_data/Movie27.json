@@ -1,0 +1,29 @@
+{
+  "永恆族": {
+    "character": {
+      "utterance": [
+        "永恆族"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "必須重新聚集在一起"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "更強大的敵人迪維安斯"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "在人類歷史上悄悄隱身了數千年後"
+      ]
+    }
+  }
+}

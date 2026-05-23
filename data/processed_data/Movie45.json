@@ -1,0 +1,29 @@
+{
+  "黑豹2：瓦干達萬歲": {
+    "character": {
+      "utterance": [
+        "拉瑪達王后、舒莉、恩巴庫、奧科耶和朵拉親衛團奮力保護國家"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "英雄必須在戰犬娜奇雅和艾佛瑞特羅斯的幫助下團結"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "受人愛戴的國王帝查拉去世後"
+      ]
+    }
+  }
+}

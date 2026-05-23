@@ -1,0 +1,29 @@
+{
+  "驚奇隊長": {
+    "character": {
+      "utterance": [
+        "女飛官卡蘿丹佛斯"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "如何成為漫威宇宙最強的女英雄"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "一場古老的戰爭"
+      ]
+    }
+  }
+}

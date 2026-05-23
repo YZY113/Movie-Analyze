@@ -1,0 +1,29 @@
+{
+  "沙贊！": {
+    "character": {
+      "utterance": [
+        "邪惡的希瓦納博士"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "他必須盡快掌握"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "邪惡的希瓦納博士奪取沙贊的魔法能力"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        ""
+      ]
+    }
+  }
+}

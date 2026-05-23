@@ -1,0 +1,29 @@
+{
+  "蝙蝠俠：新世紀": {
+    "character": {
+      "utterance": [
+        "布魯斯韋恩以蝙蝠俠身分"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "蝙蝠俠不得不發揮"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "為市民伸張正義"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "深陷高譚市的黑暗陰影之中"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "正當殺手將槍口瞄準高譚市的菁英分子"
+      ]
+    }
+  }
+}

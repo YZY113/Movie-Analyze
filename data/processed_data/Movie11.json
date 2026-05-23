@@ -1,0 +1,29 @@
+{
+  "超人特攻隊": {
+    "character": {
+      "utterance": [
+        "人稱「超能先生」的巴鮑伯和妻子「彈力女超人」巴荷莉"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "拯救全世界"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "試圖回歸正常的日常生活"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "接獲一道神秘指令"
+      ]
+    }
+  }
+}

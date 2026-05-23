@@ -1,0 +1,29 @@
+{
+  "藍甲蟲": {
+    "character": {
+      "utterance": [
+        "海梅•雷耶斯對未來滿懷憧憬"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "尋求自己存在於世界上的意義"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "聖甲蟲突然選擇海梅作為共生宿主後"
+      ]
+    }
+  }
+}

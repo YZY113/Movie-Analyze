@@ -1,0 +1,29 @@
+{
+  "X戰警：未來昔日": {
+    "character": {
+      "utterance": [
+        "金鋼狼自願回到過去"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "拯救他們的未來"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "金鋼狼自願回到過去"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "變種人對人類構成威脅"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "隨著變種人如今面臨滅絕的危機"
+      ]
+    }
+  }
+}

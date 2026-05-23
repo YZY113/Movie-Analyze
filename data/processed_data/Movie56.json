@@ -1,0 +1,29 @@
+{
+  "蜘蛛人：驚奇再起": {
+    "character": {
+      "utterance": [
+        "格格不入的青少年彼得"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "並與康納的邪惡化身蜥蜴人展開對決"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "努力解開關於自己過往的謎團"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "康納的邪惡化身"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "彼得的父親在他小時候拋棄他"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "超人回歸": {
+    "character": {
+      "utterance": [
+        "超人必須面對"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "超人必須面對"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "老對手路塞爾打算把超人廢掉"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "當老對手路塞爾打算把超人廢掉的時候"
+      ]
+    }
+  }
+}

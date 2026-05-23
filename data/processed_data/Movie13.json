@@ -1,0 +1,29 @@
+{
+  "黑豹": {
+    "character": {
+      "utterance": [
+        "帝查拉（T'Challa）返回家鄉"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "國王必須團結他的盟友"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "強大的敵人"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "全世界的命運都陷入了危機"
+      ]
+    }
+  }
+}

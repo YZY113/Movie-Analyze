@@ -1,0 +1,29 @@
+{
+  "鋼鐵人": {
+    "character": {
+      "utterance": [
+        "東尼史塔克（小勞勃道尼飾）是一位身價億萬的企業家"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "東尼必須重新面對過去"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        "誓言帶領「史氏工業」邁向新的方向"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "他也被一群暴徒挾持淪為人質"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "生活出現三百六十度的大轉變"
+      ]
+    }
+  }
+}

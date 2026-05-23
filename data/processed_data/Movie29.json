@@ -1,0 +1,29 @@
+{
+  "異星戰場": {
+    "character": {
+      "utterance": [
+        "地球戰士約翰卡特"
+      ]
+    },
+    "hero_must_do": {
+      "utterance": [
+        "必須在星球上作戰"
+      ]
+    },
+    "movtivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "強大的敵人"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "被神秘地傳送到火星"
+      ]
+    }
+  }
+}
