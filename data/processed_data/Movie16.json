@@ -5,16 +5,6 @@
         "打擊罪惡的賽博格"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        ""
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "向那些把他分屍的殘酷變態傢伙復仇"
-      ]
-    },
     "Threat": {
       "utterance": [
         ""
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "發生在近未來的底特律"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "向那些把他分屍的殘酷變態傢伙復仇"
       ]
     }
   }

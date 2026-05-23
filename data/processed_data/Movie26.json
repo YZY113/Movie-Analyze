@@ -5,16 +5,6 @@
         "史考特朗恩"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "必須幫助荷普與漢克"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "強大的新敵人"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在英雄內戰後"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "必須幫助荷普與漢克"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

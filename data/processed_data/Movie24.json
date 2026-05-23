@@ -5,16 +5,6 @@
         "機器人學神童阿廣"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "他將杯麵與他的其他朋友改造成一群高科技英雄"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "危險的陰謀"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "當一場毀滅性的變故"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "他將杯麵與他的其他朋友改造成一群高科技英雄"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

@@ -5,16 +5,6 @@
         "彼得奎爾和他的怪咖團隊"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "捍衛宇宙和平"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "希望解開彼得奎爾的身世之謎"
-      ]
-    },
     "Threat": {
       "utterance": [
         ""
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在廣闊的宇宙中四處飛行"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "捍衛宇宙和平"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "希望解開彼得奎爾的身世之謎"
       ]
     }
   }

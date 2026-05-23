@@ -5,16 +5,6 @@
         "出身豪門的布魯斯韋恩"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "對抗高譚市所有的犯罪份子"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "對社會正義感到徹底失望"
-      ]
-    },
     "Threat": {
       "utterance": [
         "所有的犯罪份子"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在他父母雙雙慘遭謀殺之後"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "對抗高譚市所有的犯罪份子"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "對社會正義感到徹底失望"
       ]
     }
   }

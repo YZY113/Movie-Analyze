@@ -5,16 +5,6 @@
         "最強的終極反派薩諾斯"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "復仇者聯盟和他們的盟友們必須要不顧一切攜手合作"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "最強的終極反派薩諾斯將整個宇宙毀滅"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "薩諾斯的威脅一步步向地球逼近"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "復仇者聯盟和他們的盟友們必須要不顧一切攜手合作"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

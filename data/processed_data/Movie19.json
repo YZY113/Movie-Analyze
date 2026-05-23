@@ -5,16 +5,6 @@
         "鷹眼必須選邊站"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "鷹眼必須選邊站"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "壓力日益增加"
-      ]
-    },
     "Threat": {
       "utterance": [
         "產生了嚴重的分歧"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "隨著這場爭論升級為全面的內訌"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "鷹眼必須選邊站"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "壓力日益增加"
       ]
     }
   }

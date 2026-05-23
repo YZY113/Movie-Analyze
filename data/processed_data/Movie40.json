@@ -5,16 +5,6 @@
         "索爾所面對的對手"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "他要不斷地戰鬥"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "要保全家國的想法"
-      ]
-    },
     "Threat": {
       "utterance": [
         "巨大的挑戰"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "獨自踏上了最危險也是最孤獨的尋求解決之道的旅程"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "他要不斷地戰鬥"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "要保全家國的想法"
       ]
     }
   }

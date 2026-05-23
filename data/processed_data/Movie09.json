@@ -5,16 +5,6 @@
         "彼得帕克（陶比麥奎爾飾）的生活"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        ""
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "面臨著超能力衰退"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "當一場失敗的核融合實驗"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

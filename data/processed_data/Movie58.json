@@ -5,16 +5,6 @@
         "身形龐大的漫威超級英雄綠巨人浩克"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "世人必須派出軍隊"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "擁有超狂能力的生物"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "一場異常的實驗室意外"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "世人必須派出軍隊"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

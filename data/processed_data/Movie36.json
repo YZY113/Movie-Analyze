@@ -5,16 +5,6 @@
         "僅存的復仇者們"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        ""
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "為僅存的信念而戰"
-      ]
-    },
     "Threat": {
       "utterance": [
         "薩諾斯彈指間毀滅宇宙"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "灰飛煙毀後的世界"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "為僅存的信念而戰"
       ]
     }
   }

@@ -5,16 +5,6 @@
         "瓦爾基麗王（泰莎湯普森飾演）、寇格（塔伊加維迪提飾演）和前女友珍佛斯特（娜塔莉波曼）"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "在為時已晚之前阻止他"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "他想要滅絕眾神"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在一次未知的自我發現旅程中"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "在為時已晚之前阻止他"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

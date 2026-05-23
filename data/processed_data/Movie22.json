@@ -5,16 +5,6 @@
         "羅傑斯與黑寡婦及新盟友獵鷹聯手"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "羅傑斯與黑寡婦及新盟友獵鷹聯手"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "努力揭開這個不斷擴大的陰謀"
-      ]
-    },
     "Threat": {
       "utterance": [
         "全世界陷入危機"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在與復仇者聯盟的夥伴們共同經歷了紐約的災難性事件後"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "羅傑斯與黑寡婦及新盟友獵鷹聯手"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "努力揭開這個不斷擴大的陰謀"
       ]
     }
   }

@@ -5,16 +5,6 @@
         "發現小兒子小杰超驚人的超能力"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        ""
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "民眾們對超級英雄的想法改觀"
-      ]
-    },
     "Threat": {
       "utterance": [
         "碰到甚麼挑戰"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "一連串的事件"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "民眾們對超級英雄的想法改觀"
       ]
     }
   }

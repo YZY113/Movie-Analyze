@@ -5,16 +5,6 @@
         "億萬富翁東尼史塔克"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "他也必須面對"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "他為了強調鋼鐵人對世界的貢獻"
-      ]
-    },
     "Threat": {
       "utterance": [
         "企圖毀滅他個人以及全人類的致命威脅"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "東尼史塔克不但陷入四面楚歌的困境"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "他也必須面對"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "他為了強調鋼鐵人對世界的貢獻"
       ]
     }
   }

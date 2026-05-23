@@ -5,16 +5,6 @@
         "她是亞馬遜的公主黛安娜"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "與男子並肩作戰"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "相信她可以阻止威脅"
-      ]
-    },
     "Threat": {
       "utterance": [
         "外部世界正在發生的巨大戰爭"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在一場結束所有戰爭的戰爭中與男子並肩作戰"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "與男子並肩作戰"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "相信她可以阻止威脅"
       ]
     }
   }

@@ -5,16 +5,6 @@
         "韋德威爾森被迫"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "死侍開始追捕"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         ""
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "經歷人體實驗"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "死侍開始追捕"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

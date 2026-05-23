@@ -5,16 +5,6 @@
         "當邪惡的「禿鷹」出現"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "必須讓他的超能力接受考驗"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "試圖回歸正常的日常生活"
-      ]
-    },
     "Threat": {
       "utterance": [
         "威脅到他所珍視的一切時"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在與復仇者聯盟的夥伴們共同經歷了紐約事件後"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "必須讓他的超能力接受考驗"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "試圖回歸正常的日常生活"
       ]
     }
   }

@@ -5,16 +5,6 @@
         "娜塔莎羅曼諾夫必須面對她的過去"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "必須瓦解這個危險的陰謀"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "心理控制計畫「紅室」"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在成為復仇者之前"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "必須瓦解這個危險的陰謀"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

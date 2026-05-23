@@ -2,17 +2,7 @@
   "蜘蛛人：離家日": {
     "character": {
       "utterance": [
-        "彼得帕克在經歷一連串的激烈事件後"
-      ]
-    },
-    "hero_must_do": {
-      "utterance": [
-        ""
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "決定暫時卸下"
+        "邪惡的洛基"
       ]
     },
     "Threat": {
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在經歷一連串的激烈事件後"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "決定暫時卸下"
       ]
     }
   }

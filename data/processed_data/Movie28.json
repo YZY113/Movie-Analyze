@@ -5,16 +5,6 @@
         "汪達最大謎團"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "必須面對真相"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "神秘的力量"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "在一個理想化的郊區生活中"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "必須面對真相"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

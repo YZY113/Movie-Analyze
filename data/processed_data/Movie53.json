@@ -5,16 +5,6 @@
         "東尼史塔克為了卸下"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "復仇者聯盟必須再度集合"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "為了卸下鋼鐵衣以及保護世界的重責"
-      ]
-    },
     "Threat": {
       "utterance": [
         "實施清除人類的毀滅計畫"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "他們親手造成的全球危機"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "復仇者聯盟必須再度集合"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "為了卸下鋼鐵衣以及保護世界的重責"
       ]
     }
   }

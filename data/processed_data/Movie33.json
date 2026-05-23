@@ -5,16 +5,6 @@
         "尚氣被迫面對"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "必須揭露家族秘密"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "神秘的十環組織"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "當他被捲入十環組織的秘密世界"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "必須揭露家族秘密"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

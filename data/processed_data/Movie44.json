@@ -5,16 +5,6 @@
         "死侍也被迫"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "被迫要開始思考友情"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         ""
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "當一個穿著紅色緊身衣的賤嘴超級英雄"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "被迫要開始思考友情"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }

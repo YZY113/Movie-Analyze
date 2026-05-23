@@ -5,16 +5,6 @@
         "蝙蝠俠（克利斯汀貝爾飾）與戈登局長（蓋瑞歐德曼 飾）決定聯手打擊罪犯"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "戈登局長（蓋瑞歐德曼 飾）決定聯手打擊罪犯"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        "為了打擊犯罪"
-      ]
-    },
     "Threat": {
       "utterance": [
         "小丑盯上蝙蝠俠"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "犯罪之都高譚市又再度騷動不安"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "戈登局長（蓋瑞歐德曼 飾）決定聯手打擊罪犯"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "為了打擊犯罪"
       ]
     }
   }

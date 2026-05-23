@@ -5,16 +5,6 @@
         "最危險的女殺手葛摩菈"
       ]
     },
-    "hero_must_do": {
-      "utterance": [
-        "能夠出奇制勝"
-      ]
-    },
-    "movtivation": {
-      "utterance": [
-        ""
-      ]
-    },
     "Threat": {
       "utterance": [
         "惡勢力的入侵"
@@ -23,6 +13,16 @@
     "Event": {
       "utterance": [
         "將要面對宇宙惡勢力的入侵"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "能夠出奇制勝"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
       ]
     }
   }
