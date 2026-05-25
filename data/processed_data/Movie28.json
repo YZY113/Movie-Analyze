@@ -1,29 +1,19 @@
 {
-  "汪達與幻視": {
+  "超人（1978）": {
     "character": {
-      "utterance": [
-        "汪達最大謎團"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "神秘的力量"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "在一個理想化的郊區生活中"
-      ]
+      "utterance": ["邪惡的雷克斯路瑟"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "必須面對真相"
-      ]
+      "utterance": ["與邪惡的雷克斯路瑟（金哈克曼飾）戰鬥"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": [""]
+    },
+    "Threat": {
+      "utterance": [""]
+    },
+    "Event": {
+      "utterance": ["在氪星毀滅前夕"]
     }
   }
 }

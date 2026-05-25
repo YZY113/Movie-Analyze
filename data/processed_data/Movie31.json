@@ -1,29 +1,19 @@
 {
-  "蟻人與黃蜂女：量子狂熱": {
+  "黑暗騎士：黎明昇起": {
     "character": {
-      "utterance": [
-        "史考特朗恩"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "征服者康的力量"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "當他和他的家人被捲入量子領域"
-      ]
+      "utterance": ["蝙蝠俠（克里斯汀貝爾飾）與高登局長"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "家人必須共同面對"
-      ]
+      "utterance": ["蝙蝠俠犧牲了一切"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": ["為了承擔哈維丹特之死的責任"]
+    },
+    "Threat": {
+      "utterance": ["迫使蝙蝠俠結束流亡"]
+    },
+    "Event": {
+      "utterance": ["一場他可能無法獲勝的戰鬥"]
     }
   }
 }

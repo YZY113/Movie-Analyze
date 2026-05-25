@@ -1,29 +1,19 @@
 {
-  "美國隊長": {
+  "蝙蝠俠大顯神威": {
     "character": {
-      "utterance": [
-        "體型瘦小的史提芬羅傑斯"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "九頭蛇的威脅"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "經過一項神奇的科學實驗"
-      ]
+      "utterance": ["蝙蝠俠想要拯救"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "對抗邪惡的納粹組織「九頭蛇」"
-      ]
+      "utterance": ["必須放棄孤軍奮戰的作風"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": ["想要拯救這座城市"]
+    },
+    "Threat": {
+      "utterance": ["小丑的惡意接管"]
+    },
+    "Event": {
+      "utterance": ["高譚市正醞釀著巨大的變化"]
     }
   }
 }

@@ -1,29 +1,19 @@
 {
-  "蟻人與黃蜂女": {
+  "奇異博士": {
     "character": {
-      "utterance": [
-        "史考特朗恩"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "強大的新敵人"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "在英雄內戰後"
-      ]
+      "utterance": ["史蒂芬史傳奇醫生（班奈狄克康柏拜區飾）的生命"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "必須幫助荷普與漢克"
-      ]
+      "utterance": ["史傳奇被迫做出抉擇"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": ["尋求治療與希望"]
+    },
+    "Threat": {
+      "utterance": ["企圖摧毀現實的無形黑暗勢力"]
+    },
+    "Event": {
+      "utterance": ["一場車禍奪走他雙手的功能後"]
     }
   }
 }

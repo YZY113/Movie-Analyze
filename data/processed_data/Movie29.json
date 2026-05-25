@@ -1,29 +1,19 @@
 {
-  "異星戰場": {
+  "超人2": {
     "character": {
-      "utterance": [
-        "地球戰士約翰卡特"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "強大的敵人"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "被神秘地傳送到火星"
-      ]
+      "utterance": ["克里斯多福李維、金哈克曼、瑪格基德"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "必須在星球上作戰"
-      ]
+      "utterance": ["對上了三名來自家鄉星球的超級罪犯"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": [""]
+    },
+    "Threat": {
+      "utterance": ["三名來自家鄉星球的超級罪犯"]
+    },
+    "Event": {
+      "utterance": ["一場爭奪世界霸權的宇宙之戰"]
     }
   }
 }

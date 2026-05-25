@@ -1,29 +1,19 @@
 {
-  "尚氣與十環傳奇": {
+  "X戰警：第一戰": {
     "character": {
-      "utterance": [
-        "尚氣被迫面對"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "神秘的十環組織"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "當他被捲入十環組織的秘密世界"
-      ]
+      "utterance": ["查爾斯和艾瑞克"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "必須揭露家族秘密"
-      ]
+      "utterance": ["聯手拯救人類"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": [""]
+    },
+    "Threat": {
+      "utterance": [""]
+    },
+    "Event": {
+      "utterance": ["當世界徘徊在核戰邊緣時"]
     }
   }
 }

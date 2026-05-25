@@ -1,28 +1,28 @@
 {
-  "死侍": {
+  "蝙蝠俠：開戰時刻": {
     "character": {
       "utterance": [
-        "韋德威爾森被迫"
+        "出身豪門的布魯斯韋恩"
       ]
     },
     "Threat": {
       "utterance": [
-        ""
+        "所有的犯罪份子"
       ]
     },
     "Event": {
       "utterance": [
-        "經歷人體實驗"
+        "在他父母雙雙慘遭謀殺之後"
       ]
     },
     "Hero_must_do": {
       "utterance": [
-        "死侍開始追捕"
+        "對抗高譚市所有的犯罪份子"
       ]
     },
     "Motivation": {
       "utterance": [
-        ""
+        "對社會正義感到徹底失望"
       ]
     }
   }

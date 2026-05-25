@@ -1,28 +1,28 @@
 {
-  "蟻人": {
+  "X戰警": {
     "character": {
       "utterance": [
-        "職業騙子史考特•朗恩"
+        "殘暴的萬磁王"
       ]
     },
     "Threat": {
       "utterance": [
-        "強大敵人的威脅"
+        "殘暴的萬磁王"
       ]
     },
     "Event": {
       "utterance": [
-        "在擁有身體變小、力量增大的超能力後"
+        "一場正邪的超能力對抗"
       ]
     },
     "Hero_must_do": {
       "utterance": [
-        "必須接受自己"
+        ""
       ]
     },
     "Motivation": {
       "utterance": [
-        ""
+        "如何利用自己的超能力"
       ]
     }
   }

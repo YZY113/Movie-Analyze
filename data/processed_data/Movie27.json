@@ -1,29 +1,19 @@
 {
-  "永恆族": {
+  "雷霆特攻隊": {
     "character": {
-      "utterance": [
-        "永恆族"
-      ]
-    },
-    "Threat": {
-      "utterance": [
-        "更強大的敵人迪維安斯"
-      ]
-    },
-    "Event": {
-      "utterance": [
-        "在人類歷史上悄悄隱身了數千年後"
-      ]
+      "utterance": ["葉蓮娜貝洛娃、巴奇巴恩斯、紅色守衛者、幽靈、模仿大師與約翰沃克"]
     },
     "Hero_must_do": {
-      "utterance": [
-        "必須重新聚集在一起"
-      ]
+      "utterance": ["必須展開一項危險的任務"]
     },
     "Motivation": {
-      "utterance": [
-        ""
-      ]
+      "utterance": [""]
+    },
+    "Threat": {
+      "utterance": ["面對自己過去最黑暗的角落"]
+    },
+    "Event": {
+      "utterance": ["在發現自己陷入由瓦倫緹娜設下的死亡陷阱後"]
     }
   }
 }
