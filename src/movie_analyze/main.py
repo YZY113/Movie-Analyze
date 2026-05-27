@@ -3,10 +3,13 @@
 
 from importlib.util import module_from_spec
 from importlib.util import spec_from_file_location
-import json
 from decision_tree import analyze_story_success
 import os
 import re
+from pathlib import Path
+from pprint import pprint
+
+
 
 def import_from_path(module_name, file_path):
     spec = spec_from_file_location(module_name, file_path)
@@ -106,138 +109,211 @@ def simLoki(content, **kwargs):
     output
         resultDICT    DICT           相似度結果 {intent: input }
     """
-    splitLIST = kwargs["splitLIST"] if "splitLIST" in kwargs else ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+    splitLIST = kwargs["splitLIST"] if "splitLIST" in kwargs else ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
     featureLIST = kwargs["featureLIST"] if "featureLIST" in kwargs else []
 
     resultDICT = cosSimilarLoki(content, splitLIST=splitLIST, featureLIST=featureLIST)
     return resultDICT
 
-def getPersonList(inputSTR, includePronounBOOL=False):
-    if ARTICUT is None:
-        print("ARTICUT 尚未初始化，請確認 account.info 裡有 username 和 api_key。")
-        return []
+def remove_duplicate(inputLIST):
+    resultLIST = []
 
-    parseResultDICT = ARTICUT.parse(inputSTR, userDefinedDictFILE=USER_DEFINED_FILE)
+    for item in inputLIST:
+        if item not in resultLIST:
+            resultLIST.append(item)
 
-    if not parseResultDICT.get("status"):
-        print(parseResultDICT.get("msg"))
-        return []
-
-    personLIST = ARTICUT.getPersonLIST(
-        parseResultDICT,
-        includePronounBOOL=includePronounBOOL
-    )
-
-    return personLIST
+    return resultLIST
 
 
+# def test_all_raw_character():
 
-# def detect_event_with_llm(text: str) -> dict:
-#     prompt = f"""
-# 你是電影文案分析師。請判斷以下文案是否包含「觸發事件（Event）」。
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-# 觸發事件的定義：
-# - 主角原本的生活狀態被某件事打破
-# - 這件事把主角捲入衝突或冒險
-# - 不限句型，只看語意
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
+#     filterLIST = ["character"]
 
-# 請回答：
-# 1. 有無觸發事件（是/否）
-# 2. 如果有，摘錄出原句
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-# 只用 JSON 回答，格式：
-# {{"has_event": true/false, "sentences": ["原句1", "原句2"]}}
+#         print(f"\n===== {filePATH.name} =====", flush=True)
 
-# 文案：
-# {text}
-# """
-#     response = getLLM(user=prompt)
-#     return json.loads(response)
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"character": []}
+#         )
 
-def detect_event_with_llm(text: str) -> dict:
-    prompt = f"""
-你是電影文案分析師。請判斷以下文案是否包含「觸發事件（Event）」。
+#         print()
+#         pprint({"character": resultDICT.get("character", [])})
 
-觸發事件的定義：
-- 主角原本的生活狀態被某件事打破
-- 這件事把主角捲入衝突或冒險
-- 不限句型，只看語意
+# def test_all_raw_hero_must_do():
 
-只用 JSON 回答，格式：
-{{"has_event": true, "sentences": ["原句1", "原句2"]}}
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-文案：
-{text}
-"""
-    response = getLLM(user=prompt)
+#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     filterLIST = ["Hero_must_do"]
 
-    print("LLM 原始回覆：")
-    print(response)
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-    if not response:
-        return {"has_event": False, "sentences": [], "error": "LLM 回傳空字串"}
+#         print(f"\n===== {filePATH.name} =====", flush=True)
 
-    response = response.strip()
-    response = response.replace("```json", "").replace("```", "").strip()
+#         resultDICT = askLoki(
+#                 contentSTR,
+#                 filterLIST=filterLIST,
+#                 splitLIST=splitLIST,
+#                 refDICT={"Hero_must_do": []}
+#             )
 
-    try:
-        return json.loads(response)
-    except json.JSONDecodeError:
-        return {
-            "has_event": False,
-            "sentences": [],
-            "error": "LLM 回傳不是合法 JSON",
-            "raw_response": response
-        }
+#         print()
+#         pprint({"Hero_must_do": resultDICT.get("Hero_must_do", [])})
 
+# def test_all_raw_motivation():
+
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
+
+#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     filterLIST = ["Motivation"]
+
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+
+#         print(f"\n===== {filePATH.name} =====", flush=True)
+
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"Motivation": []}
+#         )
+
+#         print()
+#         pprint({"Motivation": resultDICT.get("Motivation", [])})
+
+# def test_all_raw_threat():
+
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
+
+#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     filterLIST = ["Threat"]
+
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+
+#         print(f"\n===== {filePATH.name} =====", flush=True)
+
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"Threat": []}
+#         )
+
+#         print()
+#         pprint({"Threat": resultDICT.get("Threat", [])})
+
+# def test_all_raw_event():
+
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
+
+#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     filterLIST = ["Event"]
+
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+
+#         print(f"\n===== {filePATH.name} =====", flush=True)
+
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"Event": []}
+#         )
+
+#         print()
+#         pprint({"Event": resultDICT.get("Event", [])})
+
+
+def test_all_raw_intent():
+    from pathlib import Path
+    from pprint import pprint
+
+    projectRootPATH = Path(__file__).resolve().parents[2]
+    rawDataPATH = projectRootPATH / "data" / "raw_data"
+
+    splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+    filterLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
+
+    for filePATH in sorted(rawDataPATH.glob("*.txt")):
+        contentSTR = filePATH.read_text(encoding="utf-8").strip()
+        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+
+        print(f"\n===== {filePATH.name} =====", flush=True)
+
+        resultDICT = askLoki(
+            contentSTR,
+            filterLIST=filterLIST,
+            splitLIST=splitLIST,
+            refDICT={
+                "character": [],
+                "Hero_must_do": [],
+                "Motivation": [],
+                "Threat": [],
+                "Event": []
+            }
+        )
+
+        for intent in filterLIST:
+            resultDICT[intent] = remove_duplicate(resultDICT.get(intent, []))
+
+        pprint({
+            "character": resultDICT.get("character", []),
+            "Hero_must_do": resultDICT.get("Hero_must_do", []),
+            "Motivation": resultDICT.get("Motivation", []),
+            "Threat": resultDICT.get("Threat", []),
+            "Event": resultDICT.get("Event", [])
+        })
 
 if __name__ == "__main__":
     from pprint import pprint
+    #test_all_raw_character()
+    #test_all_raw_hero_must_do()
+    #test_all_raw_motivation()
+    #test_all_raw_threat()
+    #test_all_raw_event()
+    test_all_raw_intent()
+    # contentSTR = input("請輸入要分析的內容：")
 
-    contentSTR = input("請輸入要分析的內容：")
-    contentSTR = re.sub(r"（\w+）", "", contentSTR)
-    eventResultDICT = detect_event_with_llm(contentSTR)
-
-    print("Event 判斷：")
-    pprint(eventResultDICT)
-    
-
-    if not contentSTR and "utterance_count" in ACCOUNT_DICT and ACCOUNT_DICT["utterance_count"]:
-        intentSTR = list(ACCOUNT_DICT["utterance_count"])[0]
-        contentSTR = list(ACCOUNT_DICT["utterance_count"][intentSTR])[0]
-        contentSTR = re.sub("[\[\]]", "", contentSTR)
+    # if not contentSTR and "utterance_count" in ACCOUNT_DICT and ACCOUNT_DICT["utterance_count"]:
+    #     intentSTR = list(ACCOUNT_DICT["utterance_count"])[0]
+    #     contentSTR = list(ACCOUNT_DICT["utterance_count"][intentSTR])[0]
+    #     contentSTR = re.sub("[\[\]]", "", contentSTR)
         
 
-        # # Articut parse
-        # if ARTICUT is None:
-        #     print("ARTICUT 尚未初始化，請確認 account.info 裡 username 和 api_key。")
-        # else:
-        #     articutResultDICT = ARTICUT.parse(contentSTR, userDefinedDictFILE=USER_DEFINED_FILE)
-        #     pprint(articutResultDICT)
-        
-
-    filterLIST =  ["character"]
-    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    # 設定參考資料
-    refDICT = { "character": [] }
-    personLIST = getPersonList(contentSTR, includePronounBOOL=False)
+    # filterLIST =  ["character"]
+    # splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
+    # # 設定參考資料
+    # refDICT = { "character": [] }
     
-    personNameLIST = []
-    for sentencePersonLIST in personLIST:
-        for _, _, personName in sentencePersonLIST:
-            if personName not in personNameLIST:
-                personNameLIST.append(personName)
-
 
     # 檢測功能是否正常
     #COMM_TEST(contentSTR)
 
     # 執行 Loki
-    resultDICT = askLoki(contentSTR, filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT)
-    for personName in personNameLIST:
-        if personName not in resultDICT["character"]:
-            resultDICT["character"].append(personName)
-    pprint(resultDICT)
+    # resultDICT = askLoki(contentSTR, filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT)
+    # pprint(resultDICT)
 
     # 執行 Decision Tree 分析故事成功率
     # treeResultDICT = analyze_story_success(resultDICT)
