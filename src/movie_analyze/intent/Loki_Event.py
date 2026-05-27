@@ -91,7 +91,7 @@ def getReply(utterance, args):
 getResponse = getReply
 def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolkitDICT={}):
     debugInfo(inputSTR, utterance)
-    if utterance == "突然一場毀滅性的變故將鋼鐵人捲入":
+    if utterance == "一場失敗的核融合實驗":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -102,7 +102,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
             resultDICT["Event"].append(purgePat.sub("", args[0]))
             
 
-    if utterance == "毀滅性的變故導致":
+    if utterance == "在他父母雙雙慘遭謀殺之後":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -112,38 +112,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
 
-    if utterance == "當毀滅性的變故發生後":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            
-            resultDICT["Event"].append(purgePat.sub("", args[0]))
-
-    
-    if utterance == "毀滅性的戰鬥":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            
-            resultDICT["Event"].append(purgePat.sub("", args[0]))
-    
-    if utterance == "毀滅性的變故":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            
-            resultDICT["Event"].append(purgePat.sub("", args[0]))
-
-    if utterance == "車禍奪走功能":
+    if utterance == "隨著這場爭論升級為全面的內訌":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:

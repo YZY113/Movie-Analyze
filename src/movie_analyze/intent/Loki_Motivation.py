@@ -91,62 +91,33 @@ def getReply(utterance, args):
 getResponse = getReply
 def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolkitDICT={}):
     debugInfo(inputSTR, utterance)
-    if utterance == "鋼鐵人為了他的家人":
+    if utterance == "如何成為":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Motivation"].append(args[0])
+            resultDICT["Motivation"].append(purgePat.sub("", args[0]))
 
-    if utterance == "鋼鐵人為了守護他的家人":
+    if utterance == "試圖躲避":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Motivation"].append(args[0])
+            resultDICT["Motivation"].append(purgePat.sub("", args[0]))
 
-    if utterance == "鋼鐵人為了守護這個世界":
+    if utterance == "為了打擊犯罪":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Motivation"].append(args[0])
-
-    if utterance == "鋼鐵人發誓為了他的家人":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Motivation"].append(args[0])
+            resultDICT["Motivation"].append(purgePat.sub("", args[0]))
             
-
-    if utterance == "鋼鐵人發誓為了這個世界":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Motivation"].append(args[0])
-    
-    if utterance == "鋼鐵人只是想要守護":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Motivation"].append(args[0])
-            
-
     return resultDICT
 
 

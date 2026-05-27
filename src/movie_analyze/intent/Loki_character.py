@@ -89,15 +89,6 @@ def getReply(utterance, args):
 getResponse = getReply
 def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolkitDICT={}):
     debugInfo(inputSTR, utterance)
-    if utterance == "邪惡的薩諾斯":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["character"].append(args[0])
-
     if utterance == "邪惡的薩諾斯攻擊":
         if CHATBOT:
             replySTR = getReply(utterance, args)
@@ -107,17 +98,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["character"].append(args[0])
 
-    if utterance == "鋼鐵人必須守護地球":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["character"].append(args[0])
-            
-
-    if utterance == "鋼鐵人為了守護地球":
+    if utterance == "鋼鐵人必須":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -126,26 +107,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["character"].append(args[0])
 
-
-    if utterance == "鋼鐵人與另外一位復仇者":
+    if utterance == "鋼鐵人的生活":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["character"].append(args[0:])
+            resultDICT["character"].append(args[0])  
 
-    if utterance == "他與另外一位復仇者":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["character"].append(args[0])
-
-    if utterance == "邪惡的薩諾斯對鋼鐵人造成威脅":
+    if utterance == "鋼鐵人面對":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -153,6 +124,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["source"] = "reply"
         else:
             resultDICT["character"].append(args[0])
+
 
     if utterance == "最強大的超級反派薩諾斯":
         if CHATBOT:
@@ -163,7 +135,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["character"].append(args[0])
 
-    if utterance == "邪惡的薩諾斯將整個宇宙毀滅":
+    if utterance == "最強的終極反派薩諾斯":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -172,6 +144,51 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["character"].append(args[0])
 
+
+    if utterance == "疲憊不堪的羅根":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].append(args[0])
+    
+    if utterance == "青少年彼得":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].append(args[0])
+
+    if utterance == "東尼史塔克是一位":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].append(args[0])
+    
+    if utterance == "羅傑斯與黑寡婦及新盟友獵鷹聯手":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].extend(args[0:])
+
+    if utterance == "鋼鐵人與蜘蛛人":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].extend(args[0:])
 
 
     return resultDICT
