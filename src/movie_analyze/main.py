@@ -125,36 +125,36 @@ def remove_duplicate(inputLIST):
     return resultLIST
 
 
-# def test_all_raw_character():
+def test_all_raw_character():
 
-#     projectRootPATH = Path(__file__).resolve().parents[2]
-#     rawDataPATH = projectRootPATH / "data" / "raw_data"
+    projectRootPATH = Path(__file__).resolve().parents[2]
+    rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
-#     filterLIST = ["character"]
+    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
+    filterLIST = ["character"]
 
-#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
-#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
-#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+    for filePATH in sorted(rawDataPATH.glob("*.txt")):
+        contentSTR = filePATH.read_text(encoding="utf-8").strip()
+        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-#         print(f"\n===== {filePATH.name} =====", flush=True)
+        print(f"\n===== {filePATH.name} =====", flush=True)
 
-#         resultDICT = askLoki(
-#             contentSTR,
-#             filterLIST=filterLIST,
-#             splitLIST=splitLIST,
-#             refDICT={"character": []}
-#         )
-
-#         print()
-#         pprint({"character": resultDICT.get("character", [])})
+        resultDICT = askLoki(
+            contentSTR,
+            filterLIST=filterLIST,
+            splitLIST=splitLIST,
+            refDICT={"character": []}
+        )
+        resultDICT["character"] = remove_duplicate(resultDICT.get("character", []))
+        print()
+        pprint({"character": resultDICT.get("character", [])})
 
 # def test_all_raw_hero_must_do():
 
 #     projectRootPATH = Path(__file__).resolve().parents[2]
 #     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";", "—"]
 #     filterLIST = ["Hero_must_do"]
 
 #     for filePATH in sorted(rawDataPATH.glob("*.txt")):
@@ -173,53 +173,53 @@ def remove_duplicate(inputLIST):
 #         print()
 #         pprint({"Hero_must_do": resultDICT.get("Hero_must_do", [])})
 
-# def test_all_raw_motivation():
+def test_all_raw_motivation():
 
-#     projectRootPATH = Path(__file__).resolve().parents[2]
-#     rawDataPATH = projectRootPATH / "data" / "raw_data"
+    projectRootPATH = Path(__file__).resolve().parents[2]
+    rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
-#     filterLIST = ["Motivation"]
+    splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+    filterLIST = ["Motivation"]
 
-#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
-#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
-#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+    for filePATH in sorted(rawDataPATH.glob("*.txt")):
+        contentSTR = filePATH.read_text(encoding="utf-8").strip()
+        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-#         print(f"\n===== {filePATH.name} =====", flush=True)
+        print(f"\n===== {filePATH.name} =====", flush=True)
 
-#         resultDICT = askLoki(
-#             contentSTR,
-#             filterLIST=filterLIST,
-#             splitLIST=splitLIST,
-#             refDICT={"Motivation": []}
-#         )
+        resultDICT = askLoki(
+            contentSTR,
+            filterLIST=filterLIST,
+            splitLIST=splitLIST,
+            refDICT={"Motivation": []}
+        )
 
-#         print()
-#         pprint({"Motivation": resultDICT.get("Motivation", [])})
+        print()
+        pprint({"Motivation": resultDICT.get("Motivation", [])})
 
-# def test_all_raw_threat():
+def test_all_raw_threat():
 
-#     projectRootPATH = Path(__file__).resolve().parents[2]
-#     rawDataPATH = projectRootPATH / "data" / "raw_data"
+    projectRootPATH = Path(__file__).resolve().parents[2]
+    rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
-#     filterLIST = ["Threat"]
+    splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+    filterLIST = ["Threat"]
 
-#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
-#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
-#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+    for filePATH in sorted(rawDataPATH.glob("*.txt")):
+        contentSTR = filePATH.read_text(encoding="utf-8").strip()
+        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-#         print(f"\n===== {filePATH.name} =====", flush=True)
+        print(f"\n===== {filePATH.name} =====", flush=True)
 
-#         resultDICT = askLoki(
-#             contentSTR,
-#             filterLIST=filterLIST,
-#             splitLIST=splitLIST,
-#             refDICT={"Threat": []}
-#         )
+        resultDICT = askLoki(
+            contentSTR,
+            filterLIST=filterLIST,
+            splitLIST=splitLIST,
+            refDICT={"Threat": []}
+        )
 
-#         print()
-#         pprint({"Threat": resultDICT.get("Threat", [])})
+        print()
+        pprint({"Threat": resultDICT.get("Threat", [])})
 
 # def test_all_raw_event():
 
@@ -246,55 +246,56 @@ def remove_duplicate(inputLIST):
 #         pprint({"Event": resultDICT.get("Event", [])})
 
 
-def test_all_raw_intent():
-    from pathlib import Path
-    from pprint import pprint
+# def test_all_raw_intent():
+#     from pathlib import Path
+#     from pprint import pprint
 
-    projectRootPATH = Path(__file__).resolve().parents[2]
-    rawDataPATH = projectRootPATH / "data" / "raw_data"
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-    splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
-    filterLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
+#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     filterLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
 
-    for filePATH in sorted(rawDataPATH.glob("*.txt")):
-        contentSTR = filePATH.read_text(encoding="utf-8").strip()
-        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-        print(f"\n===== {filePATH.name} =====", flush=True)
+#         print(f"\n===== {filePATH.name} =====", flush=True)
 
-        resultDICT = askLoki(
-            contentSTR,
-            filterLIST=filterLIST,
-            splitLIST=splitLIST,
-            refDICT={
-                "character": [],
-                "Hero_must_do": [],
-                "Motivation": [],
-                "Threat": [],
-                "Event": []
-            }
-        )
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={
+#                 "character": [],
+#                 "Hero_must_do": [],
+#                 "Motivation": [],
+#                 "Threat": [],
+#                 "Event": []
+#             }
+#         )
 
-        for intent in filterLIST:
-            resultDICT[intent] = remove_duplicate(resultDICT.get(intent, []))
+#         for intent in filterLIST:
+#             resultDICT[intent] = remove_duplicate(resultDICT.get(intent, []))
 
-        pprint({
-            "character": resultDICT.get("character", []),
-            "Hero_must_do": resultDICT.get("Hero_must_do", []),
-            "Motivation": resultDICT.get("Motivation", []),
-            "Threat": resultDICT.get("Threat", []),
-            "Event": resultDICT.get("Event", [])
-        })
+#         pprint({
+#             "character": resultDICT.get("character", []),
+#             "Hero_must_do": resultDICT.get("Hero_must_do", []),
+#             "Motivation": resultDICT.get("Motivation", []),
+#             "Threat": resultDICT.get("Threat", []),
+#             "Event": resultDICT.get("Event", [])
+#         })
 
 if __name__ == "__main__":
     from pprint import pprint
     #test_all_raw_character()
     #test_all_raw_hero_must_do()
     #test_all_raw_motivation()
-    #test_all_raw_threat()
+    test_all_raw_threat()
     #test_all_raw_event()
-    test_all_raw_intent()
+    #test_all_raw_intent()
     # contentSTR = input("請輸入要分析的內容：")
+    # contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
     # if not contentSTR and "utterance_count" in ACCOUNT_DICT and ACCOUNT_DICT["utterance_count"]:
     #     intentSTR = list(ACCOUNT_DICT["utterance_count"])[0]
@@ -302,16 +303,16 @@ if __name__ == "__main__":
     #     contentSTR = re.sub("[\[\]]", "", contentSTR)
         
 
-    # filterLIST =  ["character"]
+    # filterLIST =  []
     # splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
     # # 設定參考資料
-    # refDICT = { "character": [] }
+    # refDICT = { "character": [], "Hero_must_do": [], "Motivation": [], "Threat": [], "Event": [] }
     
 
-    # 檢測功能是否正常
+    #檢測功能是否正常
     #COMM_TEST(contentSTR)
 
-    # 執行 Loki
+    #執行 Loki
     # resultDICT = askLoki(contentSTR, filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT)
     # pprint(resultDICT)
 
