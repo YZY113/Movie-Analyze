@@ -1,0 +1,31 @@
+{
+  "死侍2": {
+    "character": {
+      "utterance": [
+        "死侍也被迫",
+        "「死侍」萊恩雷諾斯",
+        "新角色「機堡」"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "被迫要開始思考友情"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "當一個穿著紅色緊身衣的賤嘴超級英雄遇上一個帶著刺殺任務的超級戰士時"
+      ]
+    }
+  }
+}

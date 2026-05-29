@@ -1,0 +1,31 @@
+{
+  "X戰警": {
+    "character": {
+      "utterance": [
+        "殘暴的萬磁王",
+        "X教授的領導"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "如何利用自己的超能力"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "殘暴的萬磁王"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "在X教授的領導保護之下",
+        "一場正邪的超能力對抗"
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "超人2": {
+    "character": {
+      "utterance": [
+        "叛亂者薩德將軍",
+        "狂徒諾恩",
+        "超人與露薏絲蓮恩"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "對上了三名來自家鄉星球的超級罪犯"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "三名來自家鄉星球的超級罪犯"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "一場爭奪世界霸權的宇宙之戰"
+      ]
+    }
+  }
+}

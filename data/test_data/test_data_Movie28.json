@@ -1,0 +1,32 @@
+{
+  "超人（1978）": {
+    "character": {
+      "utterance": [
+        "科學家喬艾爾",
+        "邪惡的雷克斯路瑟",
+        "兒子凱艾爾"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "對抗邪惡",
+        "與邪惡的雷克斯路瑟（金哈克曼飾）戰鬥"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "邪惡的雷克斯路瑟"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "在氪星毀滅前夕"
+      ]
+    }
+  }
+}

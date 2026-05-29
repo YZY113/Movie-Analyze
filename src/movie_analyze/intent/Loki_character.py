@@ -125,6 +125,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["character"].append(args[0])
 
+    if utterance == "弟弟洛基":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].append(args[0])        
+
 
     if utterance == "疲憊不堪的羅根":
         if CHATBOT:
@@ -161,6 +170,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["source"] = "reply"
         else:
             resultDICT["character"].extend(args[0:])
+
+    if utterance == "鋼鐵人與蜘蛛人":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["character"].extend(args[0:])        
 
 
     return resultDICT

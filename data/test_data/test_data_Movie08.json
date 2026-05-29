@@ -1,0 +1,31 @@
+{
+  "超人特攻隊2": {
+    "character": {
+      "utterance": [
+        "超能太太",
+        "超能先生",
+        "小兒子小杰"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "民眾們對超級英雄的想法改觀"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "一連串的事件"
+      ]
+    }
+  }
+}

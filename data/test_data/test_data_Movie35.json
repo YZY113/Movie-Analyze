@@ -1,0 +1,31 @@
+{
+  "復仇者聯盟：終局之戰": {
+    "character": {
+      "utterance": [
+        "僅存的復仇者們",
+        "薩諾斯彈指"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "如何重整旗鼓",
+        "為僅存的信念而戰"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "毀滅宇宙"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "灰飛煙毀後的世界"
+      ]
+    }
+  }
+}

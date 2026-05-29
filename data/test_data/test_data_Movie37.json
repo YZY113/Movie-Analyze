@@ -1,0 +1,30 @@
+{
+  "驚奇隊長": {
+    "character": {
+      "utterance": [
+        "驚奇隊長-卡蘿丹佛斯",
+        "女飛官卡蘿丹佛斯"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "如何成為漫威宇宙最強的女英雄"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "地球陷入兩個外星世界的宇宙之戰"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "當薩諾斯彈指的灰飛煙滅後"
+      ]
+    }
+  }
+}

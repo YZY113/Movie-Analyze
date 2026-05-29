@@ -1,0 +1,30 @@
+{
+  "死侍與金鋼狼": {
+    "character": {
+      "utterance": [
+        "無精打采的韋德威爾遜",
+        "百般不願意的金鋼狼"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "他必須說服"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "生存危機"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "當家園面臨生存危機"
+      ]
+    }
+  }
+}

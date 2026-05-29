@@ -1,0 +1,31 @@
+{
+  "蝙蝠俠大顯神威": {
+    "character": {
+      "utterance": [
+        "蝙蝠俠想要拯救",
+        "羅賓和忠誠的管家阿福"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "必須放棄孤軍奮戰的作風",
+        "拯救這座城市"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "想要拯救這座城市"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "小丑的惡意接管"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "高譚市正醞釀著巨大的變化"
+      ]
+    }
+  }
+}

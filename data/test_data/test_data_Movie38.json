@@ -1,0 +1,31 @@
+{
+  "雷神索爾": {
+    "character": {
+      "utterance": [
+        "強大神力的雷神索爾"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "索爾必須學會",
+        "對抗來自神界的強大黑暗勢力",
+        "他必須成為一名超級英雄"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "如何成為一個真正的英雄"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "強大黑暗勢力"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "一場古老的戰爭"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "超人2025": {
+    "character": {
+      "utterance": [
+        "科技億萬富豪雷克斯・路瑟"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "拯救他於危難"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        "企圖徹底將這位鋼鐵之軀從世上除去"
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "當超人被捲入國內外的衝突之中"
+      ]
+    }
+  }
+}

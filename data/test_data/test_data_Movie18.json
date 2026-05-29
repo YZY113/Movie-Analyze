@@ -1,0 +1,30 @@
+{
+  "蜘蛛人：離家日": {
+    "character": {
+      "utterance": [
+        "蜘蛛人彼得帕克",
+        "尼克福瑞與神祕怪物和神秘客"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        "決定暫時卸下自己「鄰家英雄」的身分"
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "在經歷一連串的激烈事件後"
+      ]
+    }
+  }
+}

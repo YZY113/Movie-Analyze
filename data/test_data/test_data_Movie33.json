@@ -1,0 +1,31 @@
+{
+  "X戰警：第一戰": {
+    "character": {
+      "utterance": [
+        "名為查爾斯賽維爾（詹姆斯麥艾維飾）的變種人",
+        "變種人艾瑞克藍歇爾",
+        "查爾斯和艾瑞克"
+      ]
+    },
+    "Hero_must_do": {
+      "utterance": [
+        "聯手拯救人類"
+      ]
+    },
+    "Motivation": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Threat": {
+      "utterance": [
+        ""
+      ]
+    },
+    "Event": {
+      "utterance": [
+        "當世界徘徊在核戰邊緣時"
+      ]
+    }
+  }
+}
