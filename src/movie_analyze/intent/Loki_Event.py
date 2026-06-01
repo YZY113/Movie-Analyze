@@ -122,6 +122,68 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
 
+
+    if utterance == "在她成為Wonder Woman神力女超人之前":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))
+    
+
+    if utterance == "讓他個人生活被超級英雄的身分大受影響":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "將要面對宇宙惡勢力的入侵":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))  
+
+    if utterance == "當復仇者聯盟的行動導致了附帶損害":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "高譚市正醞釀著巨大的變化":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "深陷高譚市的黑暗陰影之中":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))
+            
     return resultDICT
 
 
