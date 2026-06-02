@@ -3,7 +3,8 @@
     "character": {
       "utterance": [
         "史考特•朗恩",
-        "漢克•皮姆"
+        "漢克•皮姆",
+        "蟻人"
       ]
     },
     "Hero_must_do": {
@@ -20,7 +21,7 @@
     },
     "Threat": {
       "utterance": [
-        "強大敵人的威脅"
+        "敵人的威脅"
       ]
     },
     "Event": {
