@@ -100,6 +100,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "在X教授的領導保護之下":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Event"].append(purgePat.sub("", args[0]))        
             
 
     if utterance == "在他父母雙雙慘遭謀殺之後":
@@ -111,6 +120,36 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "將要面對宇宙惡勢力的入侵":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0])) 
+
+    if utterance == "深陷高譚市的黑暗陰影之中":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "高譚市正醞釀著巨大的變化":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))                         
 
     if utterance == "隨著這場爭論升級為全面的內訌":
         if CHATBOT:
@@ -132,6 +171,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
+
+    if utterance == "當復仇者聯盟的行動導致了附帶損害":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            
+            resultDICT["Event"].append(purgePat.sub("", args[0]))        
     
 
     if utterance == "讓他個人生活被超級英雄的身分大受影響":
@@ -144,17 +193,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
 
-    if utterance == "將要面對宇宙惡勢力的入侵":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            
-            resultDICT["Event"].append(purgePat.sub("", args[0]))  
-
-    if utterance == "當復仇者聯盟的行動導致了附帶損害":
+    if utterance == "邁爾斯摩拉斯在地鐵裡被一隻放射性蜘蛛咬傷後":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -164,25 +203,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
             
             resultDICT["Event"].append(purgePat.sub("", args[0]))
 
-    if utterance == "高譚市正醞釀著巨大的變化":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            
-            resultDICT["Event"].append(purgePat.sub("", args[0]))
+    
 
-    if utterance == "深陷高譚市的黑暗陰影之中":
+    if utterance == "韋德威爾森被迫經歷人體實驗":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            
-            resultDICT["Event"].append(purgePat.sub("", args[0]))
+            resultDICT["Event"].append(purgePat.sub("", args[0]))                    
             
     return resultDICT
 

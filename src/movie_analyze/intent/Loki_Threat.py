@@ -92,7 +92,63 @@ getResponse = getReply
 def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolkitDICT={}):
     debugInfo(inputSTR, utterance)
     
+    if utterance == "敵人入侵":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+
+    if utterance == "毀滅世界":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+
+    if utterance == "毀滅宇宙":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))         
+
+    if utterance == "被敵人摧毀":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+
+
     if utterance == "企圖奪取力量":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+
+    if utterance == "全世界陷入危機":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+         
+
+    if utterance == "將整個宇宙毀滅":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -110,45 +166,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Threat"].append(purgePat.sub("", args[0]))
 
-
-    if utterance == "全世界陷入危機":
+    if utterance == "強大敵人的威脅":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Threat"].append(purgePat.sub("", args[0]))    
-      
-
-    if utterance == "被敵人摧毀":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Threat"].append(purgePat.sub("", args[0]))       
-
-
-    if utterance == "將整個宇宙毀滅":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Threat"].append(purgePat.sub("", args[0]))       
-                
-    if utterance == "毀滅世界":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Threat"].append(purgePat.sub("", args[0]))   
-
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
 
     if utterance == "強大許多的敵人":
         if CHATBOT:
@@ -158,8 +183,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["source"] = "reply"
         else:
             resultDICT["Threat"].append(purgePat.sub("", args[0]))
+    
 
-    if utterance == "敵人入侵":
+    if utterance == "邪惡的禿鷹出現":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -168,6 +194,43 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Threat"].append(purgePat.sub("", args[0]))
 
+    if utterance == "奪取沙贊的魔法能力":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))        
+
+    if utterance == "企圖抓捕她的黑暗勢力":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+
+
+    if utterance == "變種人對人類構成威脅":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
+
+
+    if utterance == "企圖毀滅他個人以及全人類的致命威脅":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Threat"].append(purgePat.sub("", args[0]))
 
 
     return resultDICT
