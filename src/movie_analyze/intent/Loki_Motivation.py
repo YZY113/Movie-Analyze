@@ -117,6 +117,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["source"] = "reply"
         else:
             resultDICT["Motivation"].append(purgePat.sub("", args[0]))
+
+    if utterance == "以守護他的人民的安全":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Motivation"].append(purgePat.sub("", args[0]))
+
+    if utterance == "尋求自己存在於世界上的意義":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Motivation"].append(purgePat.sub("", args[0]))                
             
     return resultDICT
 

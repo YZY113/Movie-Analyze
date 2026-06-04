@@ -101,6 +101,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
 
+    if utterance == "拯救全世界":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
 
     if utterance == "必須盡快阻止":
         if CHATBOT:
@@ -109,7 +117,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))        
 
     if utterance == "必須聯手擊敗":
         if CHATBOT:
@@ -118,17 +126,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
-
-
-    if utterance == "決定聯手打擊罪犯":
-        if CHATBOT:
-            replySTR = getReply(utterance, args)
-            if replySTR:
-                resultDICT["response"] = replySTR
-                resultDICT["source"] = "reply"
-        else:
-            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))        
 
     if utterance == "對抗邪惡的金霸王":
         if CHATBOT:
@@ -139,7 +137,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
 
-    if utterance == "拯救全世界":
+    if utterance == "決定聯手打擊罪犯":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0])) 
+
+    if utterance == "必須要與時間賽跑":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -148,7 +155,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
 
-
+    if utterance == "共同迎戰宇宙最強大的超級反派薩諾斯":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+                 
     return resultDICT
 
 
