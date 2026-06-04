@@ -3,7 +3,8 @@
     "character": {
       "utterance": [
         "羅根",
-        "X教授"
+        "X教授",
+        "變種人"
       ]
     },
     "Hero_must_do": {
@@ -13,7 +14,7 @@
     },
     "Motivation": {
       "utterance": [
-        "他試圖躲避外在世界的計畫"
+        "試圖躲避外在世界的計畫"
       ]
     },
     "Threat": {
