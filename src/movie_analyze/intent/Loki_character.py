@@ -313,5 +313,5 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
 if __name__ == "__main__":
     from pprint import pprint
 
-    resultDICT = getResult("邪惡的薩諾斯", "邪惡的薩諾斯", [], {}, {})
+    resultDICT = getResult("在導師東尼史塔克的密切關注下", "在導師東尼史塔克的密切關注下", ["東尼史塔克"], {"character": []}, {})
     pprint(resultDICT)
