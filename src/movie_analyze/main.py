@@ -8,6 +8,7 @@ import os
 import re
 from pathlib import Path
 from pprint import pprint
+import json
 
 
 
@@ -73,7 +74,7 @@ def askLoki(content, **kwargs):
         resultDICT    DICT           合併 runLoki() 的結果
 
     e.g.
-        splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+        splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "—--"]
         resultDICT = execLoki("今天天氣如何？後天氣象如何？")                      # output => ["今天天氣"]
         resultDICT = execLoki("今天天氣如何？後天氣象如何？", splitLIST=splitLIST) # output => ["今天天氣", "後天氣象"]
         resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"])                # output => ["今天天氣", "後天氣象"]
@@ -85,6 +86,77 @@ def askLoki(content, **kwargs):
 
     resultDICT = execLoki(content, filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT, toolkitDICT=toolkitDICT)
     return resultDICT
+
+def askLoki_with_match_log(contentSTR, filterLIST, splitLIST, refDICT):
+    import io
+    from contextlib import redirect_stdout
+
+    buffer = io.StringIO()
+
+    with redirect_stdout(buffer):
+        resultDICT = askLoki(
+            contentSTR,
+            filterLIST=filterLIST,
+            splitLIST=splitLIST,
+            refDICT=refDICT
+        )
+
+    matchDICT = {intent: [] for intent in filterLIST}
+
+    for line in buffer.getvalue().splitlines():
+        match = re.match(r"\[(.+?)\]\s+(.+?)\s+===>\s+(.+)", line)
+
+        if not match:
+            continue
+
+        intent = match.group(1)
+        sentence = match.group(2).strip()
+        utterance = match.group(3).strip()
+
+        if intent in matchDICT:
+            matchDICT[intent].append({
+                "sentence": sentence,
+                "utterance": utterance
+            })
+
+    return resultDICT, matchDICT
+
+def list_all_intent_matched_sentences():
+    from pathlib import Path
+
+    projectRootPATH = Path(__file__).resolve().parents[2]
+    rawDataPATH = projectRootPATH / "data" / "raw_data"
+
+    intentLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
+    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+
+    allMatchDICT = {intent: [] for intent in intentLIST}
+
+    for filePATH in sorted(rawDataPATH.glob("*.txt")):
+        contentSTR = filePATH.read_text(encoding="utf-8").strip()
+        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+
+        resultDICT, matchDICT = askLoki_with_match_log(
+            contentSTR,
+            filterLIST=intentLIST,
+            splitLIST=splitLIST,
+            refDICT={intent: [] for intent in intentLIST}
+        )
+
+        for intent in intentLIST:
+            for item in matchDICT[intent]:
+                allMatchDICT[intent].append({
+                    "movie": filePATH.name,
+                    "sentence": item["sentence"],
+                    "utterance": item["utterance"]
+                })
+
+    for intent in intentLIST:
+        print(f"\n### {intent}")
+
+        for item in allMatchDICT[intent]:
+            print(f"- {item['movie']}: {item['sentence']} ===> {item['utterance']}")
+
 
 def askLLM(system="", assistant="", user=""):
     """
@@ -109,7 +181,7 @@ def simLoki(content, **kwargs):
     output
         resultDICT    DICT           相似度結果 {intent: input }
     """
-    splitLIST = kwargs["splitLIST"] if "splitLIST" in kwargs else ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
+    splitLIST = kwargs["splitLIST"] if "splitLIST" in kwargs else ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     featureLIST = kwargs["featureLIST"] if "featureLIST" in kwargs else []
 
     resultDICT = cosSimilarLoki(content, splitLIST=splitLIST, featureLIST=featureLIST)
@@ -125,36 +197,36 @@ def remove_duplicate(inputLIST):
     return resultLIST
 
 
-def test_all_raw_character():
+# def test_all_raw_character():
 
-    projectRootPATH = Path(__file__).resolve().parents[2]
-    rawDataPATH = projectRootPATH / "data" / "raw_data"
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
-    filterLIST = ["character"]
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+#     filterLIST = ["character"]
 
-    for filePATH in sorted(rawDataPATH.glob("*.txt")):
-        contentSTR = filePATH.read_text(encoding="utf-8").strip()
-        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-        print(f"\n===== {filePATH.name} =====", flush=True)
+#         print(f"\n===== {filePATH.name} =====", flush=True)
 
-        resultDICT = askLoki(
-            contentSTR,
-            filterLIST=filterLIST,
-            splitLIST=splitLIST,
-            refDICT={"character": []}
-        )
-        resultDICT["character"] = remove_duplicate(resultDICT.get("character", []))
-        print()
-        pprint({"character": resultDICT.get("character", [])})
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"character": []}
+#         )
+#         resultDICT["character"] = remove_duplicate(resultDICT.get("character", []))
+#         print()
+#         pprint({"character": resultDICT.get("character", [])})
 
 # def test_all_raw_hero_must_do():
 
 #     projectRootPATH = Path(__file__).resolve().parents[2]
 #     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";", "—"]
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
 #     filterLIST = ["Hero_must_do"]
 
 #     for filePATH in sorted(rawDataPATH.glob("*.txt")):
@@ -173,60 +245,60 @@ def test_all_raw_character():
 #         print()
 #         pprint({"Hero_must_do": resultDICT.get("Hero_must_do", [])})
 
-def test_all_raw_motivation():
+# def test_all_raw_motivation():
 
-    projectRootPATH = Path(__file__).resolve().parents[2]
-    rawDataPATH = projectRootPATH / "data" / "raw_data"
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-    splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
-    filterLIST = ["Motivation"]
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+#     filterLIST = ["Motivation"]
 
-    for filePATH in sorted(rawDataPATH.glob("*.txt")):
-        contentSTR = filePATH.read_text(encoding="utf-8").strip()
-        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-        print(f"\n===== {filePATH.name} =====", flush=True)
+#         print(f"\n===== {filePATH.name} =====", flush=True)
 
-        resultDICT = askLoki(
-            contentSTR,
-            filterLIST=filterLIST,
-            splitLIST=splitLIST,
-            refDICT={"Motivation": []}
-        )
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"Motivation": []}
+#         )
 
-        print()
-        pprint({"Motivation": resultDICT.get("Motivation", [])})
+#         print()
+#         pprint({"Motivation": resultDICT.get("Motivation", [])})
 
-def test_all_raw_threat():
+# def test_all_raw_threat():
 
-    projectRootPATH = Path(__file__).resolve().parents[2]
-    rawDataPATH = projectRootPATH / "data" / "raw_data"
+#     projectRootPATH = Path(__file__).resolve().parents[2]
+#     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-    splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
-    filterLIST = ["Threat"]
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+#     filterLIST = ["Threat"]
 
-    for filePATH in sorted(rawDataPATH.glob("*.txt")):
-        contentSTR = filePATH.read_text(encoding="utf-8").strip()
-        contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+#     for filePATH in sorted(rawDataPATH.glob("*.txt")):
+#         contentSTR = filePATH.read_text(encoding="utf-8").strip()
+#         contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
-        print(f"\n===== {filePATH.name} =====", flush=True)
+#         print(f"\n===== {filePATH.name} =====", flush=True)
 
-        resultDICT = askLoki(
-            contentSTR,
-            filterLIST=filterLIST,
-            splitLIST=splitLIST,
-            refDICT={"Threat": []}
-        )
+#         resultDICT = askLoki(
+#             contentSTR,
+#             filterLIST=filterLIST,
+#             splitLIST=splitLIST,
+#             refDICT={"Threat": []}
+#         )
 
-        print()
-        pprint({"Threat": resultDICT.get("Threat", [])})
+#         print()
+#         pprint({"Threat": resultDICT.get("Threat", [])})
 
 # def test_all_raw_event():
 
 #     projectRootPATH = Path(__file__).resolve().parents[2]
 #     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
 #     filterLIST = ["Event"]
 
 #     for filePATH in sorted(rawDataPATH.glob("*.txt")):
@@ -253,7 +325,7 @@ def test_all_raw_threat():
 #     projectRootPATH = Path(__file__).resolve().parents[2]
 #     rawDataPATH = projectRootPATH / "data" / "raw_data"
 
-#     splitLIST = ["，", "。", "？", "！", "!", ",", "\n", "；", ";"]
+#     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
 #     filterLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
 
 #     for filePATH in sorted(rawDataPATH.glob("*.txt")):
@@ -286,14 +358,216 @@ def test_all_raw_threat():
 #             "Event": resultDICT.get("Event", [])
 #         })
 
+
+def flatten_unique(inputLIST):
+    resultLIST = []
+
+    for item in inputLIST:
+        if isinstance(item, list):
+            for subItem in flatten_unique(item):
+                if subItem not in resultLIST:
+                    resultLIST.append(subItem)
+        else:
+            item = str(item).strip()
+            if item and item not in resultLIST:
+                resultLIST.append(item)
+
+    return resultLIST
+
+
+def is_match(predSTR, goldSTR):
+    predSTR = str(predSTR).strip()
+    goldSTR = str(goldSTR).strip()
+
+    if not predSTR or not goldSTR:
+        return False
+
+    return predSTR == goldSTR
+
+
+def calc_prf_count(predLIST, goldLIST):
+    predLIST = flatten_unique(predLIST)
+    goldLIST = flatten_unique(goldLIST)
+
+    matchedPredSET = set()
+    matchedGoldSET = set()
+
+    for predIndex, pred in enumerate(predLIST):
+        for goldIndex, gold in enumerate(goldLIST):
+            if goldIndex in matchedGoldSET:
+                continue
+
+            if is_match(pred, gold):
+                matchedPredSET.add(predIndex)
+                matchedGoldSET.add(goldIndex)
+                break
+
+    fpLIST = [
+        pred
+        for predIndex, pred in enumerate(predLIST)
+        if predIndex not in matchedPredSET
+    ]
+
+    fnLIST = [
+        gold
+        for goldIndex, gold in enumerate(goldLIST)
+        if goldIndex not in matchedGoldSET
+    ]
+
+    return {
+        "TP": len(matchedGoldSET),
+        "FP": len(fpLIST),
+        "FN": len(fnLIST),
+        "fpLIST": fpLIST,
+        "fnLIST": fnLIST
+    }
+
+
+def calc_prf_score(countDICT):
+    TP = countDICT["TP"]
+    FP = countDICT["FP"]
+    FN = countDICT["FN"]
+
+    precision = TP / (TP + FP) if TP + FP else 0
+    recall = TP / (TP + FN) if TP + FN else 0
+    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0
+
+    return {
+        "TP": TP,
+        "FP": FP,
+        "FN": FN,
+        "precision": round(precision, 4),
+        "recall": round(recall, 4),
+        "f1": round(f1, 4)
+    }
+
+
+def get_gold_intent_dict(goldPath):
+    goldDICT = json.load(open(goldPath, encoding="utf-8"))
+    movieTitle = list(goldDICT.keys())[0]
+    movieDICT = goldDICT[movieTitle]
+
+    intentLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
+
+    return {
+        intent: movieDICT.get(intent, {}).get("utterance", [])
+        for intent in intentLIST
+    }
+
+
+def evaluate_all_intents():
+    from pathlib import Path
+
+    projectRootPATH = Path(__file__).resolve().parents[2]
+    rawDataPATH = projectRootPATH / "data" / "raw_data"
+    testDataPATH = projectRootPATH / "data" / "test_data"
+
+    intentLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
+    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+
+    totalDICT = {
+        intent: {"TP": 0, "FP": 0, "FN": 0}
+        for intent in intentLIST
+    }
+    errorDICT = {
+        intent: {
+            "FP": [],
+            "FN": []
+        }
+        for intent in intentLIST
+    }
+
+    for goldPath in sorted(testDataPATH.glob("test_data_Movie*.json")):
+        movieNo = goldPath.stem.replace("test_data_Movie", "")
+        rawPath = rawDataPATH / f"Movie{movieNo}.txt"
+
+        if not rawPath.exists():
+            print(f"找不到 raw data: {rawPath}")
+            continue
+
+        contentSTR = rawPath.read_text(encoding="utf-8").strip()
+        contentSTR =  re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
+
+        resultDICT = askLoki(
+            contentSTR,
+            filterLIST=intentLIST,
+            splitLIST=splitLIST,
+            refDICT={intent: [] for intent in intentLIST}
+        )
+
+        goldIntentDICT = get_gold_intent_dict(goldPath)
+
+        for intent in intentLIST:
+            countDICT = calc_prf_count(
+                predLIST=resultDICT.get(intent, []),
+                goldLIST=goldIntentDICT.get(intent, [])
+    )
+            if intent == "character" and countDICT["fnLIST"]:
+                print(f"\n===== DEBUG {rawPath.name} / {intent} =====")
+
+                print("PRED character:")
+                pprint(flatten_unique(resultDICT.get(intent, [])))
+
+                print("GOLD character:")
+                pprint(flatten_unique(goldIntentDICT.get(intent, [])))
+
+                print("FN character:")
+                pprint(countDICT["fnLIST"])
+            totalDICT[intent]["TP"] += countDICT["TP"]
+            totalDICT[intent]["FP"] += countDICT["FP"]
+            totalDICT[intent]["FN"] += countDICT["FN"]
+
+            errorDICT[intent]["FP"].append({
+                "movie": rawPath.name,
+                "items": countDICT["fpLIST"]
+    })
+
+            errorDICT[intent]["FN"].append({
+                "movie": rawPath.name,
+                "items": countDICT["fnLIST"]
+    })
+
+    print("\n===== Per Intent =====")
+
+    overallDICT = {"TP": 0, "FP": 0, "FN": 0}
+
+    for intent in intentLIST:
+        scoreDICT = calc_prf_score(totalDICT[intent])
+        print(f"\n[{intent}]")
+        pprint(scoreDICT)
+
+        overallDICT["TP"] += totalDICT[intent]["TP"]
+        overallDICT["FP"] += totalDICT[intent]["FP"]
+        overallDICT["FN"] += totalDICT[intent]["FN"]
+
+    print("\n===== Overall Micro Average =====")
+    pprint(calc_prf_score(overallDICT))
+
+    print("\n===== Error Analysis =====")
+
+    for intent in intentLIST:
+        print(f"\n### {intent}")
+
+        print("\nFP 多抓：")
+        for error in errorDICT[intent]["FP"]:
+            if error["items"]:
+                print(f"- {error['movie']}: {error['items']}")
+
+        print("\nFN 漏抓：")
+        for error in errorDICT[intent]["FN"]:
+            if error["items"]:
+                print(f"- {error['movie']}: {error['items']}")        
+
 if __name__ == "__main__":
     from pprint import pprint
     #test_all_raw_character()
     #test_all_raw_hero_must_do()
     #test_all_raw_motivation()
-    test_all_raw_threat()
+    #test_all_raw_threat()
     #test_all_raw_event()
     #test_all_raw_intent()
+    evaluate_all_intents()
+    #list_all_intent_matched_sentences()
     # contentSTR = input("請輸入要分析的內容：")
     # contentSTR = re.sub(r"《[^》]*》|【[^】]*】|\([^)]*\)|（[^）]*）", "", contentSTR)
 
@@ -304,7 +578,7 @@ if __name__ == "__main__":
         
 
     # filterLIST =  []
-    # splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";", "、"]
+    # splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     # # 設定參考資料
     # refDICT = { "character": [], "Hero_must_do": [], "Motivation": [], "Threat": [], "Event": [] }
     
