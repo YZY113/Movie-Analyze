@@ -146,7 +146,26 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Hero_must_do"].append(purgePat.sub("", args[0])) 
 
+    if utterance == "拯救他於危難之中":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+
     if utterance == "決定聯手打擊罪犯":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+
+
+    if utterance == "與黃蜂女並肩作戰":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -162,7 +181,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))        
 
 
     if utterance == "擊退這個對地球造成史無前例威脅的敵人":
@@ -174,6 +193,23 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
 
+    if utterance == "與關史黛西以及一支全新的蜘蛛人團隊聯手":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))
+
+    if utterance == "必須在戰犬娜奇雅和艾佛瑞特羅斯的幫助下團結":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Hero_must_do"].append(purgePat.sub("", args[0]))        
 
     return resultDICT
 

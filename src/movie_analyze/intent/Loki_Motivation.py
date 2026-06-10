@@ -100,7 +100,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Motivation"].append(purgePat.sub("", args[0]))
 
-    if utterance == "試圖躲避":
+    if utterance == "試圖證明":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -118,7 +118,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Motivation"].append(purgePat.sub("", args[0]))
 
-    if utterance == "以守護他的人民的安全":
+    if utterance == "為叔叔的死復仇":
         if CHATBOT:
             replySTR = getReply(utterance, args)
             if replySTR:
@@ -127,6 +127,33 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
         else:
             resultDICT["Motivation"].append(purgePat.sub("", args[0]))
 
+    if utterance == "相信她可以阻止威脅":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Motivation"].append(purgePat.sub("", args[0])) 
+
+    if utterance == "以守護他的人民的安全":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Motivation"].append(purgePat.sub("", args[0])) 
+
+    if utterance == "對超級英雄的想法改觀":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Motivation"].append(purgePat.sub("", args[0])) 
+
     if utterance == "尋求自己存在於世界上的意義":
         if CHATBOT:
             replySTR = getReply(utterance, args)
@@ -134,7 +161,18 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT, pattern="", toolki
                 resultDICT["response"] = replySTR
                 resultDICT["source"] = "reply"
         else:
-            resultDICT["Motivation"].append(purgePat.sub("", args[0]))                
+            resultDICT["Motivation"].append(purgePat.sub("", args[0])) 
+
+    if utterance == "為了他和高登所期盼的更大利益":
+        if CHATBOT:
+            replySTR = getReply(utterance, args)
+            if replySTR:
+                resultDICT["response"] = replySTR
+                resultDICT["source"] = "reply"
+        else:
+            resultDICT["Motivation"].append(purgePat.sub("", args[0]))         
+
+
             
     return resultDICT
 
