@@ -13,12 +13,13 @@
     },
     "Hero_must_do": {
       "utterance": [
-        "必須展開一項危險的任務"
+        "必須展開一項危險的任務",
+        "面對自己過去最黑暗的角落"
       ]
     },
     "Motivation": {
       "utterance": [
-        ""
+
       ]
     },
     "Threat": {

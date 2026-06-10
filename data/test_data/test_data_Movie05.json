@@ -9,7 +9,8 @@
     },
     "Hero_must_do": {
       "utterance": [
-        "阻止威脅"
+        "阻止威脅",
+        "成為WonderWoman神力女超人"
       ]
     },
     "Motivation": {
@@ -19,7 +20,7 @@
     },
     "Threat": {
       "utterance": [
-        "外部世界正在發生的巨大戰爭"
+        "世界正在發生的巨大戰爭"
       ]
     },
     "Event": {

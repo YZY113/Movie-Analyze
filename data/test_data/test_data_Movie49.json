@@ -2,22 +2,23 @@
   "鋼鐵人3": {
     "character": {
       "utterance": [
-        "鋼鐵人"
+        "鋼鐵人",
+        "史塔克"
       ]
     },
     "Hero_must_do": {
       "utterance": [
-        "依靠才智及本能才能保護那些他最愛的人"
+        "必須依靠才智及本能才能保護那些他最愛的人"
       ]
     },
     "Motivation": {
       "utterance": [
-        ""
+        
       ]
     },
     "Threat": {
       "utterance": [
-        "生活被敵人摧毀"
+        "生活被敵人摧毀得支離破碎"
       ]
     },
     "Event": {

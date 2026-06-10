@@ -10,7 +10,8 @@
     },
     "Hero_must_do": {
       "utterance": [
-        "拯救全世界"
+        "拯救全世界",
+        "執行一項高度機密任務"
       ]
     },
     "Motivation": {
@@ -18,12 +19,12 @@
     },
     "Threat": {
       "utterance": [
-        ""
+        
       ]
     },
     "Event": {
       "utterance": [
-        "一道神秘指令"
+        "一項高度機密任務"
       ]
     }
   }
