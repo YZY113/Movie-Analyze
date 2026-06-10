@@ -1,167 +1,302 @@
 # Movie-Analyze
 
-Movie-Analyze 是一個用來分析電影劇情簡介的專案。專案會從電影文案中抽取角色、主角必須採取的行動、動機、威脅與事件，並整理成 JSON 格式，方便後續做規則測試、資料標註或模型分析。
+Movie-Analyze 是一個以超級英雄電影文案為語料的敘事特徵分析專案。專案使用 Articut / Loki 規則系統抽取五個語言學敘事特徵，並進一步將抽取結果轉成機器學習特徵，用 Decision Tree、Logistic Regression、SVM、KNN 分類電影文案的 `high / low` 類別。
 
-## 分析目標
+本專案的核心不是單純追求分類準確率，而是建立一套可解釋的語言學分析流程：先用 Loki 把電影文案轉成敘事特徵，再用機器學習模型檢驗這些特徵是否具有分類能力。
 
-目前主要分析以下 intents：
+## Research Flow
 
-- `character`：角色或人物
-- `Hero_must_do`：主角必須做的事
-- `Motivation`：角色行動的動機
-- `Threat`：威脅或危機
-- `Event`：觸發事件
+```text
+電影文案
+↓
+Data Wash 更新自訂詞
+↓
+Loki / Articut 規則分析
+↓
+五大敘事特徵
+↓
+Precision / Recall / F1 評估
+↓
+Feature Vector
+↓
+Decision Tree / Logistic Regression / SVM / KNN
+↓
+high / low 分類結果
+```
 
-## 專案結構
+本專案也建立 raw text baseline：
+
+```text
+原始電影文案
+↓
+TF-IDF 向量化
+↓
+Decision Tree / Logistic Regression / SVM / KNN
+↓
+high / low 分類結果
+```
+
+## Five Narrative Features
+
+| Intent | 說明 |
+|---|---|
+| `character` | 文案中的角色、英雄、反派或重要人物 |
+| `Hero_must_do` | 英雄或主角必須完成的任務、行動或責任 |
+| `Motivation` | 角色行動背後的原因、目的或動機 |
+| `Threat` | 威脅、敵人、危機或破壞力量 |
+| `Event` | 故事事件、背景變化或情節推進 |
+
+## Project Structure
 
 ```text
 Movie-Analyze/
 ├── README.md
 ├── data_wash.py
 ├── data/
-│   ├── raw_data/          # 原始電影文案
-│   ├── processed_data/    # 已整理或標註過的 JSON 資料
-│   └── test_data/         # 測試用 JSON 資料
-├── src/
-│   └── movie_analyze/
-│       ├── main.py        # 主要測試與執行程式
-│       ├── decision_tree.py
-│       ├── requirements.txt
-│       └── intent/
-│           ├── Loki_character.py
-│           ├── Loki_Hero_must_do.py
-│           ├── Loki_Motivation.py
-│           ├── Loki_Threat.py
-│           ├── Loki_Event.py
-│           └── USER_DEFINED.json
-└── ref/                   # 參考資料
+│   ├── raw_data/          # 原始電影文案，作為 high 類別
+│   ├── bad_data/          # 對照文案，作為 low 類別
+│   ├── test_data/         # Loki 評估用 gold standard
+│   ├── processed_data/    # 整理後的 JSON 資料
+│   └── ml_features.csv    # Loki feature vector
+└── src/
+    └── movie_analyze/
+        ├── main.py
+        ├── make_ml_features.py
+        ├── train_decision_tree.py
+        ├── train_logistic_regression.py
+        ├── train_svm.py
+        ├── train_knn.py
+        ├── train_raw_text_baseline.py
+        ├── requirements.txt
+        └── intent/
+            ├── Loki_character.py
+            ├── Loki_Hero_must_do.py
+            ├── Loki_Motivation.py
+            ├── Loki_Threat.py
+            ├── Loki_Event.py
+            └── USER_DEFINED.json
 ```
 
-## Data Wash
+## Setup
 
-`data_wash.py` 會從 `data/raw_data` 裡的電影文案抽取專有名詞，例如：
-
-- 電影名稱，例如：`《雷神索爾：愛與雷霆》`
-- 演員名稱，例如：`（克里斯漢斯沃飾）`
-
-抽出的詞會寫入：
-
-```text
-src/movie_analyze/intent/USER_DEFINED.json
-```
-
-讓 Articut / Loki 在分析時可以更正確辨識電影名稱、演員名稱等專有名詞，降低斷詞錯誤。
-
-## 執行方式
-
-安裝套件：
+Install Articut / Loki dependencies:
 
 ```bash
 pip install -r src/movie_analyze/requirements.txt
 ```
 
-執行 data wash：
+Install machine learning dependencies:
+
+```bash
+pip install pandas scikit-learn
+```
+
+The Loki API setting is stored in:
+
+```text
+src/movie_analyze/account.info
+```
+
+If debug output such as `[character] ... ===>` is not needed, set:
+
+```json
+"debug": false
+```
+
+Use valid JSON booleans: `true` / `false`, not Python `True` / `False`.
+
+## Data Wash
+
+`data_wash.py` extracts movie names and actor names from `data/raw_data` and merges them into:
+
+```text
+src/movie_analyze/intent/USER_DEFINED.json
+```
+
+This helps Articut / Loki recognize movie titles, actor names, and proper nouns more accurately.
+
+Preview without changing `USER_DEFINED.json`:
+
+```bash
+python data_wash.py --dry-run
+```
+
+Update `USER_DEFINED.json`:
 
 ```bash
 python data_wash.py
 ```
 
-執行主要程式：
+Example output:
+
+```text
+extract _movieName: 14
+extract _actorName: 29
+merged _movieName: 60
+merged _actorName: 66
+updated: src/movie_analyze/intent/USER_DEFINED.json
+```
+
+## Loki Evaluation
+
+`data/test_data` is used as the gold standard. Each JSON file contains the correct utterances for the five intents.
+
+Run evaluation:
 
 ```bash
 python src/movie_analyze/main.py
 ```
 
-## 測試 Intent
+The evaluation reports per-intent:
 
-可以在 `main.py` 裡設定 `filterLIST` 來測試指定 intent。
+| Metric | 說明 |
+|---|---|
+| `TP` | Loki 抓到，且 gold standard 也有 |
+| `FP` | Loki 多抓，但 gold standard 沒有 |
+| `FN` | gold standard 有，但 Loki 沒抓到 |
+| `precision` | 抓到的結果中，有多少是正確的 |
+| `recall` | gold standard 中，有多少被抓到 |
+| `f1` | precision 與 recall 的綜合指標 |
 
-只測試 `character`：
-
-```python
-filterLIST = ["character"]
-```
-
-測試除了 `Event` 之外的所有 intent：
-
-```python
-filterLIST = ["character", "Hero_must_do", "Motivation", "Threat"]
-```
-
-測試所有 intent：
+Current matching rule:
 
 ```python
-filterLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
+predSTR == goldSTR
 ```
 
-如果分析結果有重複項目，可以使用：
+This means the prediction and gold standard must be exactly the same to count as a match.
+
+## Loki Feature Vector
+
+Generate machine learning features from Loki outputs:
+
+```bash
+python src/movie_analyze/make_ml_features.py
+```
+
+This creates:
+
+```text
+data/ml_features.csv
+```
+
+Each movie is converted into features such as:
+
+```text
+has_character
+count_character
+has_Hero_must_do
+count_Hero_must_do
+has_Motivation
+count_Motivation
+has_Threat
+count_Threat
+has_Event
+count_Event
+label
+```
+
+Labels are assigned as:
+
+```text
+data/raw_data  -> high
+data/bad_data  -> low
+```
+
+## Machine Learning Models
+
+All four models use the same Loki feature vector: `data/ml_features.csv`.
+
+Run Decision Tree:
+
+```bash
+python src/movie_analyze/train_decision_tree.py
+```
+
+Run Logistic Regression:
+
+```bash
+python src/movie_analyze/train_logistic_regression.py
+```
+
+Run SVM:
+
+```bash
+python src/movie_analyze/train_svm.py
+```
+
+Run KNN:
+
+```bash
+python src/movie_analyze/train_knn.py
+```
+
+The data is split with:
 
 ```python
-def remove_duplicate(inputLIST):
-    resultLIST = []
-
-    for item in inputLIST:
-        if item not in resultLIST:
-            resultLIST.append(item)
-
-    return resultLIST
+test_size=0.25
+random_state=42
+stratify=y
 ```
 
-再對指定 intent 去重：
+This means 75% of the data is used for training and 25% is used for testing.
 
-```python
-resultDICT["Threat"] = remove_duplicate(resultDICT.get("Threat", []))
+## Raw Text Baseline
+
+The baseline uses raw movie text instead of Loki features. Text is converted into TF-IDF character n-gram features and then classified with the same four models.
+
+Run baseline:
+
+```bash
+python src/movie_analyze/train_raw_text_baseline.py
 ```
 
-若要對所有 intent 去重：
+The baseline is useful for comparison:
 
-```python
-intentLIST = ["character", "Hero_must_do", "Motivation", "Threat", "Event"]
-
-for intent in intentLIST:
-    resultDICT[intent] = remove_duplicate(resultDICT.get(intent, []))
+```text
+Loki features     -> interpretable narrative features
+Raw text TF-IDF   -> surface-level text features
 ```
 
-## 輸出格式
+## Current Experiment Summary
 
-每部電影的分析結果會整理成 JSON，例如：
+One experiment result using Loki features:
 
-```json
-{
-  "蜘蛛人：新宇宙": {
-    "character": {
-      "utterance": ["布魯克林的青少年邁爾斯摩拉斯"]
-    },
-    "Hero_must_do": {
-      "utterance": ["必須運用他新獲得的能力"]
-    },
-    "Motivation": {
-      "utterance": [""]
-    },
-    "Threat": {
-      "utterance": ["對抗邪惡的「金霸王」"]
-    },
-    "Event": {
-      "utterance": ["在地鐵裡被一隻放射性蜘蛛咬傷後"]
-    }
-  }
-}
+| Model | Accuracy | Macro F1 |
+|---|---:|---:|
+| Decision Tree | 0.818 | 0.812 |
+| Logistic Regression | 0.727 | 0.705 |
+| SVM | 0.682 | 0.646 |
+| KNN | 0.818 | 0.741 |
+
+One experiment result using raw TF-IDF baseline:
+
+| Model | Accuracy | Macro F1 |
+|---|---:|---:|
+| Decision Tree | 0.727 | 0.686 |
+| Logistic Regression | 0.818 | 0.741 |
+| SVM | 0.818 | 0.741 |
+| KNN | 0.818 | 0.771 |
+
+Decision Tree with Loki features is especially useful because it provides interpretable rules. For example, the model can show whether `count_character` or `has_Event` helps distinguish `high` and `low` movie descriptions.
+
+## Research Interpretation
+
+In this project, Loki and machine learning are connected as follows:
+
+```text
+Loki = linguistic feature extractor
+Machine learning models = classifier / predictor
 ```
 
-## 測試資料
+Loki extracts the five narrative features from movie descriptions. The extracted features are then transformed into a feature vector and passed into machine learning models.
 
-`data/test_data` 目前放測試用 JSON，例如：
+This preserves the linguistic focus of the project. Instead of directly feeding raw text into a black-box model, the system first converts text into interpretable narrative features.
 
-- `test_data_Movie14.json`
-- `test_data_Movie22.json`
-- `test_data_Movie26.json`
+## Notes
 
-這些檔案可以用來檢查 intent 輸出是否符合預期標註。
-
-## 注意事項
-
-- `USER_DEFINED.json` 會影響 Articut / Loki 的斷詞與 intent 分析結果。
-- 更新 `USER_DEFINED.json` 後，如果 `processed_data` 是由舊字典產生的分析結果，建議重新檢查。
-- `__pycache__` 是 Python 自動產生的快取資料夾，不需要提交。
-- `account.info` 可能包含 API key，不應該上傳到 GitHub。
-- intent key 建議統一使用 `Hero_must_do` 和 `Motivation`，避免使用 `hero_must_do` 或 `movtivation`。
+- `USER_DEFINED.json` improves proper noun recognition.
+- If Loki rules are updated, run `make_ml_features.py` again before retraining ML models.
+- Improving Loki recall may change the ML model results, but the two recall values are not the same metric.
+- `__pycache__` is Python's cache folder and can be ignored.
+- API keys in `account.info` should not be shared publicly.
